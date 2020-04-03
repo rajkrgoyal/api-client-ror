@@ -2,6 +2,8 @@
 
 # All APIs related to widgets
 module WidgetService
+
+  # Visible widgets with search
   def get_widgets(params)
     params['client_id'] = ENV['CLIENT_ID']
     params['client_secret'] = ENV['CLIENT_SECRET']
@@ -18,6 +20,7 @@ module WidgetService
     HTTParty.get("#{ENV['API_URL']}#{api_path}", body: params)
   end
 
+  # logged in user's widgets with searching
   def my_widgets(params)
     params['client_id'] = ENV['CLIENT_ID']
     params['client_secret'] = ENV['CLIENT_SECRET']
