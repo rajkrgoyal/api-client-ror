@@ -1,0 +1,14 @@
+<% if session['user'] %>
+  Hi <%=session['user']['first_name'] %> &nbsp; | &nbsp; 
+  <li class="nav-item"><%= link_to 'My Widgets', my_widgets_path %></li> &nbsp; | &nbsp; 
+  <%= link_to 'Edit Profile', edit_registrations_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modalEditProfileForm'}  %> &nbsp; | &nbsp; 
+  <%= link_to 'Change Password', edit_passwords_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modalChangePasswordForm'}  %> &nbsp; | &nbsp; 
+  <li class="nav-item"><%= link_to 'Logout', sessions_path, method: :delete %></li> &nbsp; 
+<% else %>
+  <li class="nav-item">
+    <%= link_to 'Login', new_sessions_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modalLoginForm'}  %> &nbsp; | &nbsp; 
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Sign Up', new_registrations_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modalSignupForm'}  %>
+  </li>
+<% end %>

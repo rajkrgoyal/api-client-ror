@@ -1,0 +1,9 @@
+$(".alert").hide();
+$("#modalChangePasswordForm").find(".modal-content").html("<%= j (render 'edit') %>");
+$("#modalChangePasswordForm").modal();
+$(".edit-password-errors").hide();
+
+<% if @error.present? %>
+  $(".edit-password-errors").show();
+  document.querySelector('.edit-password-errors').innerHTML = '<%=@error%>'
+<% end %>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <%= link_to root_url, class: "navbar-brand" do %>
+    <h2>Technical Test</h2>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <%= render 'widgets/search' %>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav navbar-light" id="header_links">
+      <%=render 'shared/links' %>
+    </ul>
+    
+  </div>
+</nav>

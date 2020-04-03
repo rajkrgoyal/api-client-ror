@@ -1,0 +1,29 @@
+<%= form_with(url: passwords_path, method: 'patch', remote: true) do %>
+  <div class="modal-header text-center">
+    <h4 class="modal-title w-100 font-weight-bold">Change password</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="alert alert-danger edit-password-errors"></div>
+  <div class="modal-body mx-3">
+    <div class="md-form mb-5">
+      <i class="fas fa-envelope prefix grey-text"></i>
+      <label data-error="wrong" data-success="right" for="defaultForm-password">Current Password</label>
+      <%= password_field_tag :current_password, nil, required: true, class: 'form-control validate' %>
+    </div>
+    <div class="md-form mb-5">
+      <i class="fas fa-envelope prefix grey-text"></i>
+      <label data-error="wrong" data-success="right" for="defaultForm-password"> New Password</label>
+      <%= password_field_tag :password, nil, required: true, class: 'form-control validate' %>
+    </div>
+    <div class="md-form mb-5">
+      <i class="fas fa-envelope prefix grey-text"></i>
+      <label data-error="wrong" data-success="right" for="defaultForm-password">Confirm Password</label>
+      <%= password_field_tag :confirm_password, nil, required: true, class: 'form-control validate' %>
+    </div>
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+      <%= button_tag 'Change Password', class: 'btn btn-outline-info waves-effect ml-auto' %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="modal-body mx-3">
+  <div class="md-form mb-5">
+    <i class="fas fa-envelope prefix grey-text"></i>
+    <label data-error="wrong" data-success="right" for="name">Name</label>
+    <%= text_field_tag :name, @name, required: true, class: 'form-control validate' %>
+  </div>
+  <div class="md-form mb-5">
+    <i class="fas fa-envelope prefix grey-text"></i>
+    <label data-error="wrong" data-success="right" for="description">Description</label>
+    <%= text_area_tag :description, @description, required: true, class: 'form-control validate' %>
+  </div>
+  <div class="md-form mb-5">
+    <i class="fas fa-envelope prefix grey-text"></i>
+    <label data-error="wrong" data-success="right">Visibility:</label>
+    <div class="custom-control custom-radio">
+      <%= radio_button_tag 'kind', 'hidden', @kind == 'hidden', class: 'custom-control-input', for: "kind_hidden" %>
+      <label class="custom-control-label" for="kind_hidden">Hidden</label>
+    </div>
+
+    <div class="custom-control custom-radio">
+      <%= radio_button_tag 'kind', 'visible', @kind == 'visible', class: 'custom-control-input', for: "kind_visible" %>
+      <label class="custom-control-label" for="kind_visible">Visible</label>
+    </div>
+  </div>
+  <div class="md-form mb-5">
+    <%= button_tag 'Submit', class: 'btn btn-outline-info waves-effect ml-auto' %>
+  </div>
+</div>

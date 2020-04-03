@@ -1,0 +1,4 @@
+<%= form_with(url: widgets_path, method: 'get', local: true, class: "form-inline my-2 my-lg-0") do %>
+  <%= text_field_tag :term, params[:term], class: 'form-control mr-sm-2', placeholder: "Search all visible widgets" %>
+  <%= button_tag 'Search', class: 'btn btn-outline-success my-2 my-sm-0' %>
+<% end %>

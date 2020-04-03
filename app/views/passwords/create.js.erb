@@ -1,0 +1,8 @@
+if (typeof(modal) == 'undefined') {
+  const modal = document.querySelector('.modal')
+}
+$(document).ready(function() {
+  $('.modal').modal('hide');
+})
+
+$('#header_links').load('/users/sessions/links');

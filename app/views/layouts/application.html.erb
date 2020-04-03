@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technical Test</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'shared/header' %>
+  <div class="container">
+    <div class="col-lg-12">  
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-warning"><%= alert %></div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
+
+  <div class="modal hide fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal hide fade" id="modalSignupForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal hide fade" id="modalForgotPasswordForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal hide fade" id="modalChangePasswordForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal hide fade" id="modalEditProfileForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>

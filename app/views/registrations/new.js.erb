@@ -1,0 +1,10 @@
+$('#modalForgotPasswordForm').modal('hide');
+$('#modalLoginForm').modal('hide');
+$("#modalSignupForm").find(".modal-content").html("<%= j (render 'new') %>");
+$("#modalSignupForm").modal();
+$(".signup-errors").hide();
+
+<% if @result.present? && @result["message"].present? %>
+  $(".signup-errors").show();
+  document.querySelector('.signup-errors').innerHTML = '<%=@result["message"]%>'
+<% end %>

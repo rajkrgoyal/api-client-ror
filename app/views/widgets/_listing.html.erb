@@ -1,0 +1,39 @@
+
+
+<% if @widgets.blank? %>
+  <div class="row"> <h5>Widget not found.</h5> </div>
+<% else %>
+  <table class="table table-image">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Widget Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Owner</th>
+        <% if session['token'].present? %>
+          <th scope="col"> </th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @widgets.each do |widget| %>
+        <tr>
+          <td class="w-25">
+            <%= image_tag widget['user']['images']['small_url'] %>
+          </td>
+          <td> <%= widget['name'] %></td>
+          <td><%= widget['description'] %></td>
+          <td><%= link_to widget['user']['name'], users_widgets_url(widget['user']['id']) %></td>
+          <% if session['token'].present? %>
+            <td> 
+              <% if session['user']['id'] == widget['user']['id'] %>
+                <%= link_to 'Edit', edit_widget_url(widget['id']) %> &nbsp; | &nbsp; 
+                <%= link_to 'Delete', widgets_url(widget['id']), method: 'delete' %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table> 
+<% end %>  
